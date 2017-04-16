@@ -34,7 +34,7 @@ describe('AppComponent', () => {
   it(`should have as description 'Welcome to the new and improved CoursePlanner2'`, async(() => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('Welcome to the new and improved CoursePlanner2');
+    expect(app.description).toEqual('Welcome to the new and improved CoursePlanner2');
   }));
 
   it('should render description in a h4 tag', async(() => {
