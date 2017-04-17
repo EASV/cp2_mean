@@ -1,6 +1,7 @@
 import { TestBed, async } from '@angular/core/testing';
 
 import { AppComponent } from './app.component';
+import Any = jasmine.Any;
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -43,5 +44,11 @@ describe('AppComponent', () => {
     const compiled = fixture.debugElement.nativeElement;
     const app = fixture.debugElement.componentInstance;
     expect(compiled.querySelector('h4').textContent).toContain(app.description);
+  }));
+
+  it(`should have a Array of course object`, async(() => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.debugElement.componentInstance;
+    expect(app.courses instanceof Array).toBe(true);
   }));
 });
