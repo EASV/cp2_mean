@@ -29,17 +29,17 @@ describe('CourseComponent', () => {
     expect(component.course).toBeDefined();
   }));
 
-  it(`Adding a course should provide a h3, h4 and p tag`, async(() => {
-    const compiled = this.fixture.debugElement.nativeElement;
-    this.component.ngOnInit();
-    this.fixture.detectChanges();
-    this.component.course = {
+  it(`Adding a course to the CourseComponent should provide a h4 and p tag`, async(() => {
+    const compiled = fixture.debugElement.nativeElement;
+    component.ngOnInit();
+    fixture.detectChanges();
+    component.course = {
       id: 'jswebapps',
-      title: 'JS Web Apps'
+      title: 'JS Web Apps',
+      description: 'This is a Course about Javascript applications'
     };
-    this.fixture.detectChanges();
-    expect(compiled.getElementsByTagName('h3').length === 1 &&
-            compiled.getElementsByTagName('h4').length === 1 &&
+    fixture.detectChanges();
+    expect(compiled.getElementsByTagName('h4').length === 1 &&
             compiled.getElementsByTagName('p').length === 1
     ).toBeTruthy();
   }));
