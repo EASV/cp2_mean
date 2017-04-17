@@ -12,5 +12,16 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.courses = [];
+    this.courses = [
+      {
+        title: 'JS Web Apps'
+      },
+      {
+        title: 'Android'
+      },
+      {
+        title: 'Demo day'
+      }
+    ];
   }
 }
