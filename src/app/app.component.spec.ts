@@ -52,12 +52,15 @@ describe('AppComponent', () => {
     this.fixture.detectChanges();
     this.component.courses = [
       {
+        id: 'jswebapps',
         title: 'JS Web Apps'
       },
       {
+        id: 'android',
         title: 'Android'
       },
       {
+        id: 'demoday',
         title: 'Demo day'
       }
     ];

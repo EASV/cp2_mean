@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {Course} from './courses/course';
 
 @Component({
   selector: 'app-root',
@@ -6,7 +7,7 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  courses: Array<any>;
+  courses: Array<Course>;
   title = 'CoursePlanner2';
   description = 'Welcome to the new and improved CoursePlanner2';
 
@@ -14,12 +15,15 @@ export class AppComponent implements OnInit {
     this.courses = [];
     this.courses = [
       {
+        id: 'jswebapps',
         title: 'JS Web Apps'
       },
       {
+        id: 'android',
         title: 'Android'
       },
       {
+        id: 'demoday',
         title: 'Demo day'
       }
     ];
