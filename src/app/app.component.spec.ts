@@ -2,15 +2,14 @@ import { TestBed, async } from '@angular/core/testing';
 
 import { AppComponent } from './app.component';
 import Any = jasmine.Any;
+import {AppModule} from './app.module';
 
 describe('AppComponent', () => {
   let fixture;
   let component: AppComponent;
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        AppComponent
-      ],
+      imports: [AppModule]
     }).compileComponents();
     this.fixture = TestBed.createComponent(AppComponent);
     this.component = this.fixture.debugElement.componentInstance;
@@ -46,7 +45,7 @@ describe('AppComponent', () => {
     expect(this.component.courses instanceof Array).toBe(true);
   }));
 
-  it(`Adding 3 courses to Array should provide 3 p tags`, async(() => {
+  it(`Adding 3 courses to Array should provide 3 app-course tags`, async(() => {
     const compiled = this.fixture.debugElement.nativeElement;
     this.component.ngOnInit();
     this.fixture.detectChanges();
@@ -65,6 +64,6 @@ describe('AppComponent', () => {
       }
     ];
     this.fixture.detectChanges();
-    expect(compiled.getElementsByTagName('p').length === 3).toBe(true);
+    expect(compiled.getElementsByTagName('app-course').length === 3).toBe(true);
   }));
 });
