@@ -3,15 +3,16 @@
   margin: 15px;
   padding: 10px;
   border-radius: 2px;
-  background: white;
-  box-shadow: 2px 2px 2px 2px rgba(170, 170, 170, 0.25);
+  background: #C09F80;
+  box-shadow: 2px 2px 2px 2px rgba(46, 20, 25, 0.70);
 }
 
 .course-title{
-  color: dodgerblue;
+  color: #76323F;
 }
 
 .course-description{
-  color: lightslategrey;
+  color: black;
+  font-size: 10px;
 }
 
