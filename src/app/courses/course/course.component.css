@@ -1,0 +1,17 @@
+.course-item {
+  display: block;
+  margin: 15px;
+  padding: 10px;
+  border-radius: 2px;
+  background: white;
+  box-shadow: 2px 2px 2px 2px rgba(170, 170, 170, 0.25);
+}
+
+.course-title{
+  color: dodgerblue;
+}
+
+.course-description{
+  color: lightslategrey;
+}
+

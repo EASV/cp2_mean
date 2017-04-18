@@ -17,17 +17,17 @@ export class AppComponent implements OnInit {
       {
         id: 'jswebapps',
         title: 'JS Web Apps',
-        description: 'working on it'
+        description: 'JS Web Apps description here!'
       },
       {
         id: 'android',
         title: 'Android',
-        description: 'working on it'
+        description: 'Android description here!'
       },
       {
         id: 'demoday',
         title: 'Demo day',
-        description: 'working on it'
+        description: 'Demo day description here!'
       }
     ];
   }
