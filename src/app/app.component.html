@@ -5,4 +5,4 @@
   {{description}}
 </h4>
 
-<p *ngFor="let course of courses">{{course.title}}</p>
+<app-course *ngFor="let course of courses" [course]="course"></app-course>

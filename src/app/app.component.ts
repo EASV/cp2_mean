@@ -16,15 +16,18 @@ export class AppComponent implements OnInit {
     this.courses = [
       {
         id: 'jswebapps',
-        title: 'JS Web Apps'
+        title: 'JS Web Apps',
+        description: 'working on it'
       },
       {
         id: 'android',
-        title: 'Android'
+        title: 'Android',
+        description: 'working on it'
       },
       {
         id: 'demoday',
-        title: 'Demo day'
+        title: 'Demo day',
+        description: 'working on it'
       }
     ];
   }
