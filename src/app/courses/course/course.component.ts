@@ -10,6 +10,7 @@ export class CourseComponent implements OnInit {
 
   @Input()
   course: Course;
+  courseItemCss = 'course-item';
 
   constructor() { }
 
