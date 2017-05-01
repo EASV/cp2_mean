@@ -11,6 +11,8 @@ export class AppComponent implements OnInit {
   title = 'CoursePlanner2';
   description = 'Welcome to the new and improved CoursePlanner2';
 
+  constructor() { }
+
   ngOnInit() {
     this.courses = [];
     this.courses = [
