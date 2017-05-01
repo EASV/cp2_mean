@@ -39,13 +39,20 @@ describe('CourseService', () => {
       expect(service).toBeDefined();
     })));
 
-  it('readAll should return observable with a []', async(inject(
+  it('readAll should return a [] of courses', async(inject(
+    [CourseService], (service) => {
+      const courses = service.readAll();
+      expect(courses instanceof Array).toBeTruthy();
+      expect(courses.length >= 0);
+    })));
+
+  /*it('readAll should return observable with a []', async(inject(
     [CourseService], (service) => {
       service.readAll().subscribe(res => {
           expect(res instanceof Array).toBeTruthy();
           expect(res.length >= 0);
       });
-    })));
+    })));*/
 /*
   it('ReadAll should parse json as a Course[]', async(inject(
     [CourseService, MockBackend], (service, mockBackend) => {
