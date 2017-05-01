@@ -5,6 +5,7 @@ import {MockBackend} from '@angular/http/testing';
 
 import {CourseService} from './course.service';
 import {Course} from './course';
+import {AppModule} from '../app.module';
 
 describe('CourseService', () => {
   const mockResponse = [{
@@ -29,7 +30,8 @@ describe('CourseService', () => {
           deps: [MockBackend, BaseRequestOptions]
         }],
       imports: [
-        HttpModule
+        HttpModule,
+        AppModule
       ]
     });
   });
@@ -44,6 +46,14 @@ describe('CourseService', () => {
       const courses = service.readAll();
       expect(courses instanceof Array).toBeTruthy();
       expect(courses.length >= 0);
+    })));
+
+  it('readAll should return a [] of courses with the correct properties', async(inject(
+    [CourseService], (service) => {
+      const courses = service.readAll();
+      expect(courses[0].id).toBe('jswebapps');
+      expect(courses[0].title).toBe('JS Web Apps');
+      expect(courses[0].description).toBe('JS Web Apps description here!');
     })));
 
   /*it('readAll should return observable with a []', async(inject(
