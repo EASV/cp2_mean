@@ -42,7 +42,7 @@ describe('CourseService', () => {
   it('readAll should return observable with a []', async(inject(
     [CourseService], (service) => {
       service.readAll().subscribe(res => {
-          expect(res).toBe([]);
+          expect(res instanceof Array).toBeTruthy();
           expect(res.length >= 0);
       });
     })));
