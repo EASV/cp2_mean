@@ -1,7 +1,4 @@
 <li [ngClass]="courseItemCss">
-  <h4 [ngClass]="'course-title'">{{course.title}}</h4>
+  <h4 [ngClass]="'course-title'" [ngStyle]="courseTitleStyle">{{course.title}}</h4>
   <p [ngClass]="'course-description'"> {{course.description}}</p>
 </li>
-
-<input [(ngModel)]="courseItemCss">
-
