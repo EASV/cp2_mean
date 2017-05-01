@@ -1,11 +1,22 @@
-import { async, TestBed, inject } from '@angular/core/testing';
-import { BaseRequestOptions, Http, HttpModule, Response, ResponseOptions } from '@angular/http';
-import { MockBackend } from '@angular/http/testing';
+import {async, TestBed, inject} from '@angular/core/testing';
+import {BaseRequestOptions, Http, HttpModule, Response, ResponseOptions} from '@angular/http';
+import {MockBackend} from '@angular/http/testing';
 
 
-import { CourseService } from './course.service';
+import {CourseService} from './course.service';
+import {Course} from './course';
 
 describe('CourseService', () => {
+  const mockResponse = [{
+    id: 'jswebapps',
+    title: 'JS Web Apps',
+    description: 'JS Web Apps description here!'
+  },
+    {
+      id: 'android',
+      title: 'Android',
+      description: 'Android description here!'
+    }];
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [
@@ -24,30 +35,36 @@ describe('CourseService', () => {
   });
 
   it('should construct', async(inject(
-    [CourseService, MockBackend], (service, mockBackend) => {
-
+    [CourseService], (service) => {
       expect(service).toBeDefined();
     })));
 
-  describe('Read all Courses shoudl return courses', () => {
-    const mockResponse = {
-      title: 'JS Web Apps',
-      body: 'Hi there all you awesome students'
-    };
+  it('readAll should return observable with a []', async(inject(
+    [CourseService], (service) => {
+      service.readAll().subscribe(res => {
+          expect(res).toBe([]);
+          expect(res.length >= 0);
+      });
+    })));
+/*
+  it('ReadAll should parse json as a Course[]', async(inject(
+    [CourseService, MockBackend], (service, mockBackend) => {
 
-    it('should parse response', async(inject(
-      [CourseService, MockBackend], (service, mockBackend) => {
+      mockBackend.connections.subscribe(conn => {
+        conn.mockRespond(new Response(new ResponseOptions({body: JSON.stringify(mockResponse)})));
+      });
 
-        mockBackend.connections.subscribe(conn => {
-          conn.mockRespond(new Response(new ResponseOptions({ body: JSON.stringify(mockResponse) })));
-        });
-
-        service.readAll().subscribe(res => {
-          expect(res).toEqual({
-            title: 'JS Web Apps',
-            body: 'Hi there all you awesome students'
-          });
-        });
-      })));
-  });
+      service.readAll().subscribe(res => {
+        expect(res).toEqual([{
+          id: 'jswebapps',
+          title: 'JS Web Apps',
+          description: 'JS Web Apps description here!'
+        },
+          {
+            id: 'android',
+            title: 'Android',
+            description: 'Android description here!'
+          }]);
+      });
+    })));*/
 });
