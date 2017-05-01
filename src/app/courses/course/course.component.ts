@@ -14,7 +14,7 @@ export class CourseComponent implements OnInit {
   @Input()
   courseItemCss: string;
 
-  courseTitleStyle = {'color': 'blue'};
+  courseTitleStyle = {};
 
   constructor() { }
 
