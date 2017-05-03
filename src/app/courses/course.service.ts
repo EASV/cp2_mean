@@ -1,29 +1,18 @@
 import { Injectable } from '@angular/core';
 import {Course} from './course';
+import {Http} from '@angular/http';
+import {Observable} from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
 
 @Injectable()
 export class CourseService {
 
-  constructor() { }
+  constructor(private http: Http) { }
 
-  readAll(): Course[] {
-    return [
-      {
-        id: 'jswebapps',
-        title: 'JS Web Apps',
-        description: 'JS Web Apps description here!'
-      },
-      {
-        id: 'android',
-        title: 'Android',
-        description: 'Android description here!'
-      },
-      {
-        id: 'demoday',
-        title: 'Demo day',
-        description: 'Demo day description here!'
-      }
-    ];
+  readAll(): Observable<Course[]> {
+    return this.http
+      .get('https://jsonplaceholder.typicode.com/posts')
+      .map(response => response.json() as Course[]);
   }
 
 }
