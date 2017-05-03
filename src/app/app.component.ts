@@ -15,6 +15,8 @@ export class AppComponent implements OnInit {
   constructor(private courseService: CourseService) { }
 
   ngOnInit() {
-    this.courses = this.courseService.readAll();
+    this.courseService.readAll().subscribe(courses => {
+      this.courses = courses;
+    });
   }
 }
