@@ -20,7 +20,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.courseServiceSub = this.courseService.readAll().subscribe(courses => {
-      this.courses = courses;
+      this.courses = courses.slice(0, 5);
     });
 
   }

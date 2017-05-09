@@ -14,5 +14,4 @@ export class CourseService {
       .get('https://jsonplaceholder.typicode.com/posts')
       .map(response => response.json() as Course[]);
   }
-
 }
