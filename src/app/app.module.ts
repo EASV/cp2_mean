@@ -10,6 +10,7 @@ import { CourseComponent } from './courses/course/course.component';
 import {CourseService} from 'app/courses/course.service';
 import { HomeComponent } from './home/home.component';
 import { CourseManagerComponent } from './courses/course-manager/course-manager.component';
+import { CourseListComponent } from './courses/course-list/course-list.component';
 
 const routes = [
   {
@@ -27,7 +28,8 @@ const routes = [
     AppComponent,
     CourseComponent,
     HomeComponent,
-    CourseManagerComponent
+    CourseManagerComponent,
+    CourseListComponent
   ],
   imports: [
     BrowserModule,
