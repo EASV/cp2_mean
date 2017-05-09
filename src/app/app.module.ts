@@ -6,11 +6,13 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { CourseComponent } from './courses/course/course.component';
 import {CourseService} from "app/courses/course.service";
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CourseComponent
+    CourseComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
