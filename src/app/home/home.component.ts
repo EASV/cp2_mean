@@ -14,7 +14,9 @@ export class HomeComponent implements OnInit, OnDestroy {
   description = 'Welcome to the new and improved CoursePlanner2';
   courseServiceSub: Subscription;
 
-  constructor(private courseService: CourseService) { }
+  constructor(private courseService: CourseService) {
+    this.courses = [];
+  }
 
   ngOnInit() {
     this.courseServiceSub = this.courseService.readAll().subscribe(courses => {
